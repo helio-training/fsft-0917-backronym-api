@@ -1,9 +1,10 @@
-const ENV = process.env.NODE_ENV = process.env.NODE_ENV || 'development'
+require('babel-polyfill')
 
-let Server
+const ENV = process.env.NODE_ENV = process.env.NODE_ENV || 'development'
+let Server = require('./dist').default
+
 if (ENV !== 'production') {
   require('babel-register')
-  require('babel-polyfill')
   Server = require('./src').default
 
 } else {

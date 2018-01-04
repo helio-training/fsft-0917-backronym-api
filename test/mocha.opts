@@ -1,3 +1,4 @@
+--require babel-polyfill
 --require babel-register
 --require ./test/helper.js
 --es_staging
